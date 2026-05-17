@@ -1,9 +1,26 @@
-spring.datasource.url=jdbc:postgresql://localhost:5432/risus_dental
-spring.datasource.username=postgres
-spring.datasource.password=myadmin1234
+spring:
+  application:
+    name: risus-dental
 
-spring.datasource.driver-class-name=org.postgresql.Driver
+  datasource:
+    url: jdbc:postgresql://localhost:5432/risus_dental
+    username: postgres
+    password: myadmin1234
+    driver-class-name: org.postgresql.Driver
 
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.show-sql=true
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+server:
+  port: 8080
+
+app:
+  jwt:
+    secret: 3f8a1b2c4d5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a
+    expiration-ms: 86400000
